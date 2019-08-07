@@ -1,4 +1,5 @@
-# Email test etl
+# Email test etl 
+Understand the behavior of a control and test group.  Test group would continue to receive email campaigns while control group would not.  Details of each group are provided in a csv.  To make the data easier to analyze, process the csv's in pandas dataframes and write to a postgres table with appropriate label for each customer group
 
 ## Getting Started
 Requirements:  csvs with customer data, python installed 
@@ -21,6 +22,7 @@ Function
 
 process_email_data()
   -update file path(s) for customer csv files
-  -read each csv and add column to label each group, concatenate to one dataframe
+  -read each csv via pandas and add column to label each group, concatenate to one dataframe.  Multiple appends are used to concatenate each dataframe to eachother
   -export to csv
-  -copy csv to data table
+  -copy csv to data table:  fields = email_address, label
+  -perform analyses on data table, joining the email_address field to other relevant tables
